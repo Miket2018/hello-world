@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+    <html>
+    <script>
+    function getMultipleSelectedValue()
+    {
+      var x=document.getElementById("alpha");
+      for (var i = 0; i < x.options.length; i++) {
+         if(x.options[i].selected ==true){
+              alert(x.options[i].value);
+          }
+      }
+    }
+    </script>
+    </head>
+    <body>
+
+
+<hr>
+    <select multiple="multiple" id="alpha">
+  <option>opt 1 text
+  <option value="opt 2 value">opt 2 text
+  <option value="opt 3 value">opt 3 text
+  <option value="opt 4 value">opt 4 text
+</select>
+<button onclick="
+  var el = document.getElementsByTagName('select')[0];
+  alert(getSelectValues(el));
+">Show selected values</button>
+    <input type="button" value="Submit" onclick="getMultipleSelectedValue()"/>
+
+
+<script>
+// Return an array of the selected opion values
+// select is an HTML select element
+function getSelectValues(select) {
+  var result = [];
+  var options = select && select.options;
+  var opt;
+
+  for (var i=0, iLen=options.length; i<iLen; i++) {
+    opt = options[i];
+
+    if (opt.selected) {
+      result.push(opt.value || opt.text);
+    }
+  }
+  return result;
+}
+// select && select.options ensures that select is not undefined, before accessing its attributes.
+
+// That's a drawback of bare JS compared to using libraries. The selectedOptions property lacks in reliable browser support. Library like jQuery will hide that from you. A lot has changed since 2013 but a quick google shows that people still have issues with selectedOptions. – uKolka Mar 7 '16 at 20:19
+</script>
+<hr>
+<select multiple="multiple">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3" selected="selected">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8" selected="selected">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select>
+
+<pre>// Return an array of the selected option values    Works in ie?
+// select is an HTML select element
+function getSelectValues1(select) {
+  var result = [];
+  var options = select && select.options;
+  var opt;
+
+  for (var i=0, iLen=options.length; i&lt;iLen; i++) {
+    opt = options[i];
+
+    if (opt.selected) {
+      result.push(opt.value || opt.text);
+    }
+  }
+  return result;
+}
+function getSelectValues2(select) {
+  return Array.prototype.map.call(select.selectedOptions, function(a) {return a.value;});
+}
+function getSelectValues3(select) {
+  var result = [];
+  var options = select && select.selectedOptions;
+
+  for (var i=0, iLen=options.length; i&lt;iLen; i++) {
+    result.push(options[i].value || options[i].text);
+    
+  }
+  return result;
+}
+
+</pre>
+
+
+    </body>
+    </html>

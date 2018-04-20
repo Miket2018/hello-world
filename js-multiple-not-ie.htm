@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<head>
+<style>
+</style>
+</head>
+<body>
+
+<form id="frm1" action="/action_page.php">
+<select id="select-meal-type" multiple="multiple" onchange="myFunction()">
+    <option value="1">Breakfast</option>
+    <option value="2">Lunch</option>
+    <option value="3">Dinner</option>
+    <option value="4">Snacks</option>
+    <option value="5">Dessert</option>
+</select>
+</form> 
+<button onclick="myFunction()">Total (Not IE)</button>
+
+<script>
+function myFunction() {
+const selected = document.querySelectorAll('#select-meal-type option:checked');
+const values = Array.from(selected).map((el) => el.value);
+console.log(values);
+alert(values);
+}
+</script>
+
+
+</body>
+</html>

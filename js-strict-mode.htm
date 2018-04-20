@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+
+<pre>Changes in strict mode
+* It is recommended that you enable strict mode on a function-by-function basis
+* Strict mode changes both syntax and runtime behavior. Changes generally fall into these categories: changes converting mistakes into errors (as syntax errors or at runtime), changes simplifying how the particular variable for a given use of a name is computed, changes simplifying eval and arguments, changes making it easier to write "secure" JavaScript, and changes anticipating future ECMAScript evolution.
+* strict mode prohibits with.
+* in strict mode, a short list of identifiers become reserved keywords. These words are implements, interface, let, package, private, protected, public, static, and yield.
+
+Differences from non-strict to strict
+When adding 'use strict';, the following cases will throw a SyntaxError before the script is executing:
+Octal syntax var n = 023;
+with statement
+Using delete on a variable name delete myVariable;
+Using eval or arguments as variable or function argument name
+Using one of the newly reserved keywords (in prevision for ECMAScript 2015): implements, interface, let, package, private, protected, public, static, and yield
+Declaring function in blocks if (a < b) { function f() {} }
+Obvious errors
+Declaring twice the same name for a property name in an object literal {a: 1, b: 3, a: 7} This is no longer the case in ECMAScript 2015 (bug 1041128).
+Declaring two function parameters with the same name function f(a, b, b) {}
+These errors are good, because they reveal plain errors or bad practices. They occur before the code is running.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode
+  
+</pre>
+
+
+</body>
+</html>

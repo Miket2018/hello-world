@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<head>
+<style>
+</style>
+</head>
+<body>
+
+
+<script>
+var array1 = ['a', 'b', 'c'];
+array1.forEach(function(element) {
+  console.log(element);
+});
+
+// expected output: "a"   works in IE
+// expected output: "b"
+// expected output: "c"
+</script>
+
+
+<script>
+// Create an array.  
+var numbers = [10, 11, 12];  
+
+// Call the addNumber callback function for each array element.  
+var sum = 0;  
+numbers.forEach(  
+    function addNumber(value) { sum += value; }  
+);  
+
+document.write(sum);  
+// Output: 33  - works in IE
+</script>
+JavaScript 1.6's for-each-in loops are deprecated; consider using ES6 for-of instead
+
+<hr>
+Deprecated syntax
+var object = { a: 10, b: 20 };
+for each (var x in object) {
+  console.log(x);
+// 10
+// 20
+}
+
+You can now use the standard for...in loop to iterate over specified object keys, and get each value inside the loop:
+var object = { a: 10, b: 20 };
+for (var key in object) {
+  var x = object[key];
+  console.log(x);
+// 10
+// 20
+}
+
+Or, using for...of (ES2015) and Object.values (ES2017), you can get an array of the specified object values and iterate over the array like this:
+var object = { a: 10, b: 20 };
+for (var x of Object.values(object)) {
+  console.log(x);
+// 10
+// 20
+}
+
+
+var array = [10, 20, 30];
+for (var x of array) {
+  console.log(x);
+// 10
+// 20
+// 30
+}
+
+To rewrite for each...in statements so that values can be null or undefined with for...of as well, you need to guard around for...of.
+
+function func(array) {
+  if (array) {
+    for (var x of array) {
+      console.log(x);
+    }
+  }
+}
+
+func([10, 20]);        // 10
+                       // 20
+func(null);            // prints nothing
+func(undefined);       // prints nothing
+
+
+You can now use the standard for...in loop to iterate over specified object keys, and get each value inside the loop:
+var object = { a: 10, b: 20 };
+for (var key in object) {
+  var value = object[key];
+  console.log(key, value);
+// "a", 10
+// "b", 20
+}
+
+
+
+
+</body>
+</html>

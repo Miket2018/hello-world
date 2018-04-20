@@ -1,0 +1,39 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Page Visibility API</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+
+<script>
+const handleChange = (e) => { document.title = document.hidden ? 'Come back!' : 'jsas.htm' }
+document.addEventListener('visibilitychange' , handleChange);
+</script>
+
+
+<p>Use the Page Visibility API to do certain things when a user navigates to another tab.</p>
+</ul>
+<li>Pause video and audio
+<li>Pause animations
+<li>Stop any network requests being made
+<li>Any other things you might want to do when the user navigates away to another tab. For example, you might change the document.title or play a sound
+</ul>
+<p>https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API</p>
+
+<blockquote>
+const handleChange = (e) => { document.title = document.hidden ? 'Come back!' : 'jsas.htm' }
+document.addEventListener('visibilitychange' , handleChange);
+</blockquote>
+
+<blockquote>
+const handleChange = (e) => { if (document.hidden) {document.title = 'Come back!'} ; if (!document.hidden) {document.title = 'Page Visibility API'} ; }
+document.addEventListener('visibilitychange' , handleChange);
+</blockquote>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+<title>shiftKey example</title>
+
+<script type="text/javascript">
+
+function showChar(e){
+  alert(
+    "Key Pressed: " + String.fromCharCode(e.charCode) + "\n"
+    + "charCode: " + e.charCode + "\n"
+    + "SHIFT key pressed: " + e.shiftKey + "\n"
+    + "ALT key pressed: " + e.altKey + "\n"
+  );
+}
+
+</script>
+</head>
+
+<body onkeypress="showChar(event);">
+<p>Press any character key, with or without holding down
+ the SHIFT key.<br />
+You can also use the SHIFT key together with the ALT key.</p>
+<hr>
+
+<pre>KeyboardEvent Properties and Methods
+altKey	Returns whether the "ALT" key was pressed when the key event was triggered
+charCode	Returns the Unicode character code of the key that triggered the event
+code	Returns the code of the key that triggered the event
+ctrlKey	Returns whether the "CTRL" key was pressed when the key event was triggered
+isComposing	Returns whether the state of the event is composing or not
+key	Returns the key value of the key represented by the event
+keyCode	Returns the Unicode character code of the key that triggered the onkeypress event, or the Unicode key code of the key that triggered the onkeydown or onkeyup event
+location	Returns the location of a key on the keyboard or device
+metaKey	Returns whether the "meta" key was pressed when the key event was triggered
+repeat	Returns whether a key is being hold down repeatedly, or not
+shiftKey	Returns whether the "SHIFT" key was pressed when the key event was triggered
+which	Returns the Unicode character code of the key that triggered the onkeypress event, or the Unicode key code of the key that triggered the onkeydown or onkeyup event
+
+These event types belongs to the KeyboardEvent Object:
+onkeydown	The event occurs when the user is pressing a key
+onkeypress	The event occurs when the user presses a key
+onkeyup	The event occurs when the user releases a key</pre>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<form id="myForm">
+<select id="mySelect">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+<br><input type="button" onclick="getOption()" value="selectedIndex">
+</form>
+
+<script>
+function getOption() {
+    var obj = document.getElementById("mySelect");
+    document.getElementById("demo3").innerHTML = 
+    obj.options[obj.selectedIndex].text;
+}
+</script>
+<p id="demo3"></p>
+<hr>
+
+<script>
+function getOptions2() {
+    var x = document.getElementById("mySelect2");
+    var txt = "";
+    var i;
+    for (i = 0; i < x.length; i++) {
+        txt = txt + " " + x.options[i].text;
+    }
+    document.getElementById("demo4").innerHTML = txt;
+}
+</script>
+
+
+<form id="myForm2">
+Select your favorite fruit:
+<select id="mySelect2">
+  <option>Apple</option>
+  <option>Orange</option>
+  <option>Pineapple</option>
+  <option>Banana</option>
+</select>
+<p>The id of the form is: <span id="demo">0</span></p>
+<script>
+document.getElementById("demo").innerHTML = document.getElementById("mySelect2").form.id;
+</script>
+
+<p>There are <span id="demo2">0</span> options in the list.</p>
+<script>
+document.getElementById("demo2").innerHTML = document.getElementById("mySelect2").length;
+</script>
+
+
+<input type="button" onclick="getOptions2()" value="Output all options">
+<br><input type="button" onclick="getIndex()" value="Display the index of the selected option">
+<br><input type="button" onclick="changeText()" value="Set text of selected option">
+<br><input type="button" onclick="removeOption()" value="Remove the selected option">
+</form>
+
+
+<p id="demo4"></p>
+
+<script>
+function getIndex() {
+    document.getElementById("demo5").innerHTML =
+    document.getElementById("mySelect2").selectedIndex;
+}
+</script>
+<p>index of the selected option:</p><p id="demo5"></p>
+
+<script>
+function changeText() {
+    x = document.getElementById("mySelect2");
+    x.options[x.selectedIndex].text = "Melon";
+}
+</script>
+<script>
+function removeOption() {
+    var x = document.getElementById("mySelect2");
+    x.remove(x.selectedIndex);
+}
+</script>
+
+<hr>
+<script>
+function changeSize() {
+    document.getElementById("mySelect3").size = 4;
+}
+</script>
+
+<form>
+<select id="mySelect3">
+  <option>Apple</option>
+  <option>Banana</option>
+  <option>Orange</option>
+  <option>Melon</option>
+</select>
+<input type="button" onclick="changeSize()" value="Change size">
+</form>
+
+<hr><script>
+function selectMultiple() {
+    document.getElementById("mySelect4").multiple = true;
+}
+</script>
+
+<form>
+<select id="mySelect4" size="4">
+  <option>Apple</option>
+  <option>Pear</option>
+  <option>Banana</option>
+  <option>Orange</option>
+</select>
+<input type="button" onclick="selectMultiple()" value="Select multiple">
+</form>
+
+<p>Before you click "Select multiple", you cannot select more than one option (by holding down the Shift or Ctrl key).</p>
+<p>After you have clicked "Select multiple", you can.</p>
+ 
+</body>
+</html>

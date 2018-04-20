@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<script>
+const jsonData = [{
+"foo": "bar",
+ "fooTwo": "barTwo",
+	"fooThree": "barThree",
+}]
+
+const mapInnerObject = jsonData.map(foo => console.log(foo)); 
+//  returns {foo: "bar", fooTwo: "barTwo", fooThree: "barThree"} (type:Object)
+
+
+
+console.log("---");
+
+var array1 = [1, 4, 9, 16];
+
+
+// pass a function to map
+
+const map1 = array1.map(x => x * 2);
+
+console.log(map1);
+
+// expected output: Array [2, 8, 18, 32]
+
+
+console.log("---");
+var numbers = [1, 4, 9];
+var roots = numbers.map(Math.sqrt);
+console.log(numbers);
+console.log(roots);
+// roots is now [1, 2, 3]
+// numbers is still [1, 4, 9]
+// Only this one works in IE
+
+</script>
+
+<pre>What you need to know about map in Javascript.
+They return a new array
+map is a transformation method. The difference between this and it’s closest counterpart examination method, a foreach loop, is that transformation methods return a new array when they are finished performing operations on them. However, the foreach loop simply observes the elements in the array. This has advantages and disadvantages. The most obvious disadvantage being space and time. However, if you do not want to lose your copy of the previous array so you can perform more processing on it in future in its untouched state, maps are for you.
+
+
+
+
+const jsonData = [{
+"foo": "bar",
+ "fooTwo": "barTwo",
+	"fooThree": "barThree",
+}]
+
+const mapInnerObject = jsonData.map(foo => console.log(foo)); 
+//  returns {foo: "bar", fooTwo: "barTwo", fooThree: "barThree"} (type:Object)
+
+var array1 = [1, 4, 9, 16];
+
+
+// pass a function to map
+
+const map1 = array1.map(x => x * 2);
+
+console.log(map1);
+
+// expected output: Array [2, 8, 18, 32]
+
+
+var numbers = [1, 4, 9];
+var roots = numbers.map(Math.sqrt);
+// roots is now [1, 2, 3]
+// numbers is still [1, 4, 9]
+// Only this one works in IE
+</pre>
+
+
+</body>
+</html>

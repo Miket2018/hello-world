@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<head>
+<style>
+</style>
+</head>
+<body>
+
+
+<script>
+var s = new Set();  
+
+s.add("scale");  
+s.add(10);  
+s.add("5");  
+
+s.forEach(function(item, sameItem, s) {  
+    document.write("Size of the set object is: " + s.size + "<br />");  
+    document.write("Deleting item: " + item + "<br />");  
+    s.delete(sameItem);  
+});  
+
+// Output:  
+// Size of the set object is: 3  
+// Deleting item: scale  
+// Size of the set object is: 2  
+// Deleting item: 10  
+// Size of the set object is: 1  
+// Deleting item: 5   
+</script>
+
+</body>
+</html>

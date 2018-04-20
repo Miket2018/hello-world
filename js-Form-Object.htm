@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+
+<form id="frm1" name="form1"  action="/action_page.php">
+  First name: <input type="text" name="fname" value="Donald"><br>
+  Last name: <input type="text" name="lname" value="Duck"><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>Click "Try it" to display the value of each element in the form.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("frm1");
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+<hr>
+<p>Click "Try it" to display the number of elements the form:</p>
+
+<button onclick="myFunction2()">Try it</button>
+
+<p id="demo2"></p>
+
+<script>
+function myFunction2() {
+    var x = document.getElementById("frm1").length;
+    document.getElementById("demo2").innerHTML = x;
+}
+</script>
+<hr>
+
+<p>Click "Try it" to display the name of the form:</p>
+
+<button onclick="myFunction3()">Try it</button>
+
+<p id="demo3"></p>
+
+<script>
+function myFunction3() {
+    var x = document.getElementById("frm1").name;
+    document.getElementById("demo3").innerHTML = x;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+
+<form id="form1">
+<button id="btn1" type="button">HTML</button>
+</form>
+
+<p>Click the "Try it" button to display the id of the form the HTML button belongs to:</p>
+
+<button onclick="myFunction1()">Try it</button>
+
+<p id="demo1"></p>
+
+<script>
+function myFunction1() {
+    var x = document.getElementById("btn1").form.id;
+    document.getElementById("demo1").innerHTML = x;
+}
+</script>
+<hr>
+
+<form id="frm1" action="/action_page.php">
+<button id="btn2" name="subject" type="submit" value="fav_HTML">HTML</button>
+</form>
+
+<p>Click the "Try it" button to return the text on the "HTML" button:</p>
+
+<button onclick="myFunction2()">Try it</button>
+
+<p id="demo2"></p>
+
+<script>
+function myFunction2() {
+    var x = document.getElementById("btn2").innerHTML;
+    document.getElementById("demo2").innerHTML = x;
+}
+</script>
+<hr>
+<form id="frm3" action="/action_page.php">
+<button id="btn3" name="subject" type="submit" value="fav_HTML">HTML</button>
+</form>
+
+<p>Click the "Try it" button to return the value of the "HTML" button:</p>
+
+<button onclick="myFunction3()">Try it</button>
+
+<p id="demo3"></p>
+
+<script>
+function myFunction3() {
+    var x = document.getElementById("btn3").value;
+    document.getElementById("demo3").innerHTML = x;
+}
+</script>
+<hr>
+<button id="btn4" type="button">HTML</button>
+
+<p>Click the "Try it" button to return the type of the "HTML" button:</p>
+
+<button onclick="myFunction4()">Try it</button>
+
+<p id="demo4"></p>
+
+<script>
+function myFunction4() {
+    var x = document.getElementById("btn4").type;
+    document.getElementById("demo4").innerHTML = x;
+}
+</script>
+<hr>
+
+
+<form id="frm5" action="/action_page.php">
+<button id="btn5" name="subject" type="submit" value="HTML">HTML</button>
+</form>
+
+<p>Click the "Try it" button to display the name of the "HTML" button:</p>
+
+<button onclick="myFunction5()">Try it</button>
+
+<p id="demo5"></p>
+
+<script>
+function myFunction5() {
+    var x = document.getElementById("btn5").name;
+    document.getElementById("demo5").innerHTML = x;
+}
+</script>
+
+<hr>
+
+<form>
+<input type="button" id="btn06" value="OK">
+</form>
+
+<p>Click the "Disable" button to disable the "OK" button:</p>
+
+<button onclick="disableElement()">Disable</button>
+
+<script>
+function disableElement() {
+    document.getElementById("btn06").disabled = true;
+}
+</script>
+
+
+</body>
+</html>

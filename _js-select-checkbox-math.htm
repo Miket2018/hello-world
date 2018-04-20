@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<head>
+<style>
+pre { white-space: pre-wrap;}
+</style>
+</head>
+<body>
+
+<script>
+function myFunction() {
+    "use strict";
+    let tot
+    = ClearNAN( +document.getElementById("v1").value)
+    + ClearNAN( +document.getElementById("v2").value)
+    + ClearNAN( +document.getElementById("v3").value)
+    + ClearNAN( +document.getElementById("v4").value)
+    + ClearNAN( +document.getElementById("v5").value)
+    + ( +document.getElementById("v6").value) * ( +document.getElementById("v6").checked)
+    + ClearNAN( +parseFloat( document.getElementById("v7").value ) );
+    document.getElementById("total").value=parseFloat(tot).toFixed(2);
+    }
+
+function myFunction5() {
+    "use strict";
+    let tot
+    = ClearNAN( +parseFloat(document.getElementById("v1").options[document.getElementById("v1").selectedIndex].text))
+    + ClearNAN( +parseFloat(document.getElementById("v2").options[document.getElementById("v2").selectedIndex].text))
+    + ClearNAN( +parseFloat(document.getElementById("v3").options[document.getElementById("v3").selectedIndex].text))
+    + ClearNAN( +parseFloat(document.getElementById("v4").options[document.getElementById("v4").selectedIndex].text))
+    + ClearNAN( +parseFloat(document.getElementById("v5").options[document.getElementById("v5").selectedIndex].text))
+    + ( +document.getElementById("v6").value) * ( +document.getElementById("v6").checked)
+    + ClearNAN( +parseFloat(document.getElementById("v7").value) );
+    document.getElementById("demo2").innerHTML = "Text Total = " + parseFloat( tot ).toFixed(2);
+   }
+
+function myFunction4() {
+    "use strict";
+    let x = document.getElementById("frm1");
+    let text = "";
+    let total = 0;
+    for (let i = 0; i < (x.length - 1) ;i++) {
+        text  += x.elements[i].value + "<br>";
+        total += ClearNAN( +parseFloat(x.elements[i].value) );
+        }
+    total = total - ( +document.getElementById("v6").value) * !( +document.getElementById("v6").checked); // if no delivery charge
+    document.getElementById("demo").innerHTML = text + "Value Total = " + parseFloat(total).toFixed(2);
+    }
+
+function ClearNAN(num) {
+    "use strict";
+    if ( !(num > 0) ) { num = 0; }
+    return (num); // 0 if neg, or NaN
+    }
+
+</script>
+ 
+<form id="frm1" action="">
+<select id="v1" onchange="myFunction()">
+  <option value="0" selected>Choose</option>
+  <option value="2.99">2.99 Milk</option>
+  <option value="1.99">1.99 Eggs</option>
+  <option value="4.99">4.99 Bacon</option>
+  <option value="1.99">1.99 Bread</option>
+</select>
+
+<select id="v2" autofocus onchange="myFunction()">
+  <option value="0" selected>Choose</option>
+  <option value="2.99">2.99 Milk</option>
+  <option value="1.99">1.99 Eggs</option>
+  <option value="4.99">4.99 Bacon</option>
+  <option value="1.99">1.99 Bread</option>
+</select>
+
+<select id="v3" onchange="myFunction()">
+  <option value="0" selected>Choose</option>
+  <option value="2.99">2.99 Milk</option>
+  <option value="1.99">1.99 Eggs</option>
+  <option value="4.99">4.99 Bacon</option>
+  <option value="1.99">1.99 Bread</option>
+</select>
+
+<select id="v4" onchange="myFunction()">
+  <option value="0" selected>Choose</option>
+  <option value="2.99">2.99 Milk</option>
+  <option value="1.99">1.99 Eggs</option>
+  <option value="4.99">4.99 Bacon</option>
+  <option value="1.99">1.99 Bread</option>
+</select>
+
+<select id="v5" onchange="myFunction()">
+  <option value="0" selected>Choose</option>
+  <option value="2.99">2.99 Milk</option>
+  <option value="-1.99">-1.99 Negative Eggs</option>
+  <option value="abc">ABC Bacon</option>
+  <option value="nan">NaN Bread</option>
+</select>
+
+<input id="v6"		type="checkbox"	name="delivery" value="5.00" checked="checked" onchange="myFunction()"> Delivery charge. 
+<input id="v7"		type="text"	placeholder="Tip Amount" onchange="myFunction()">
+<input id="total"	type="text"	placeholder="Total">
+</form> 
+
+<p>Click "Total" to display the value of each item choosen.</p>
+
+<button onclick="myFunction4()">Total of "Value"</button>
+<p id="demo"></p>
+
+<button onclick="myFunction5()">Total of "Text"</button>
+<p id="demo2"></p>
+
+<hr>
+<pre><b>"Option Object" Properties</b>
+defaultSelected	Returns the default value of the selected attribute
+disabled	Sets or returns whether an option is disabled, or not
+form	Returns a reference to the form that contains the option
+index	Sets or returns the index position of an option in a drop-down list
+label	Sets or returns the value of the label attribute of an option in a drop-down list
+selected	Sets or returns the selected state of an option
+text	Sets or returns the text of an option
+value	Sets or returns the value of an option to be sent to the server</pre>
+
+</body>
+</html>
